@@ -1,0 +1,30 @@
+<div class="input-group">
+    <input #searchBox type="text" class="form-control" placeholder="Find show..." (input)="onChange(searchBox.value)" >
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Search</button>
+    </div>
+</div>
+
+<div *ngIf="searchResult">
+    <li *ngFor="let search of searchResult">
+        <a [routerLink]="['/shows',search.show.id]">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-md-2 text-center p-3 mr-0 pr-0">
+                        <img src="{{search.show.image?.medium}}" alt="Show image" class="img-thumbnail show_img">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ search.show.name }}
+                                <small class="text-muted" style="float: right; font-size: 10px;">{{ search.score }}</small>
+                            </h6>
+                            <p class="card-text" [innerHtml]="search.show.summary"></p>
+                            <p class="card-text"><small class="text-muted" *ngFor="let genre of search.show.genres; let last = last">
+                                {{genre }}<span *ngIf="!last"> | </span></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</div>

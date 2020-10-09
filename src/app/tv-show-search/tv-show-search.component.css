@@ -1,0 +1,22 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+.form-control{
+    border-color: #1E90FF;
+}
+.show_img{
+    height: 140px; 
+    width: 100px;
+}
+.card-title{
+    font-weight: bold;
+}
+.card-text{
+    font-size: 14px;
+}
+.card-body{
+    margin-left: 0px;
+    padding-left: 0px;
+}
+

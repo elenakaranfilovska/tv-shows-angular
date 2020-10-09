@@ -1,0 +1,42 @@
+.content{
+    margin-left: 20px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: #005ce6
+}
+.title{
+    display: block;
+    color: 	#1E90FF;
+    margin-left: 0px;
+}
+.show_img{
+    height: 247px;
+    width: 176px;
+    margin-top: 15px;    
+}
+.card-body{
+    font-size: 13px;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.img_cast{
+    height: 140px; 
+    width: 100px;
+}
+.p_name{
+    margin-left: 40px;
+    display: inline-block; 
+    vertical-align: top;
+}
+h5{
+    font-weight: bold;
+}
+.container{
+    font-weight: bold;
+    margin-left: 0px;
+    padding-left: 0px;
+}

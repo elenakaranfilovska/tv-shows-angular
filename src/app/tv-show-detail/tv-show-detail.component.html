@@ -1,0 +1,40 @@
+<div *ngIf="show" class="content">
+    <h3><a href="{{show.url}}" target="_blank" class="title">{{show.name}}</a></h3>
+    <div class="card mb-3" style="border: none;">
+        <div class="row no-gutters">
+            <div class="col-md-3 text-center mr-0 pr-0">
+                <img src="{{show.image?.medium}}" alt="TVShow image" class="img-thumbnail show_img"/>
+            </div>
+            <div class="col-md-9">
+                <div class="card-body">
+                    <p [innerHtml]="show.summary"></p>
+                    <div>Language: {{show.language}}</div><br>
+                    <div>Genres: {{show.genres}}</div><br>
+                    <div>Status: {{show.status}}</div><br>
+                    <div>Premiered: {{show.premiered}}</div><br>
+                    Official Site: <a href="{{show.officialSite}}" target="_blank">{{show.officialSite}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"> <h5>Cast</h5>
+                <li *ngFor="let a of show._embedded?.cast">
+                    <img src="{{a.person.image?.medium}}" class="img-thumbnail img_cast" alt="Actor img"/> 
+                    <div class="p_name">{{a.person.name}}</div>
+                </li>
+            </div>
+            <div class="col-md-6"> <h5>Episodes</h5>
+                <li *ngFor="let e of show._embedded?.episodes">
+                    S{{e.season}}E{{e.number}} {{e.name}}
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="error">
+    {{error}}
+</div>
